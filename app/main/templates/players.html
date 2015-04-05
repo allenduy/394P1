@@ -1,0 +1,26 @@
+<!-- <ion-nav-bar class="bar-dark"><ion-nav-back-button>Back</ion-nav-back-button></ion-nav-bar> -->
+<ion-nav-view>
+  <ion-view style="background-color: #669999;">
+    <ion-content ng-show="!hasPlayers">
+      <center><h2 style="color:white;">Take player {{items.length + 1}}'s photo!</h2>
+      <p>(In the order you want to play in.)</p>
+      <img ng-src="http://placehold.it/200/200" /></center>
+      <button ng-click="takePicture()" class="button button-dark button-full">Take Picture</button>
+      <ion-list>
+        <ion-item ng-repeat="item in items" class="item-thumbnail-left">
+          <img ng-src="{{item.img}}">
+          <h2>{{item.title}}</h2>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-content ng-show="hasPlayers">
+      <ion-list>
+        <ion-item ng-repeat="item in items" class="item-thumbnail-left">
+          <img ng-src="{{item.img}}">
+          <h2>{{item.title}}</h2>
+        </ion-item>
+      </ion-list>
+      <button class="button button-dark button-full" ng-click="startGame()">Start Game!</button>
+    </ion-content>
+  </ion-view>
+</ion-nav-view>

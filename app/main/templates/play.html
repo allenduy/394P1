@@ -1,0 +1,24 @@
+<ion-nav-view>
+  <ion-view hide-back-button="true" style="background-color: #669999;">
+    <ion-content>
+      <div style="height:140px;">
+        <center><img src="http://i.imgur.com/xVPulK4.png" height="200" width="200" /></center>
+      </div>
+      <div class="card">
+        <div class="item item-divider"></div>
+        <center>
+          <img ng-src="{{ img }}" />
+          <h2>Player {{ num }}'s Turn!</h2>
+          Your points: {{ points }}<br>
+          Your rolls: {{ rolls | json }}
+          <button ng-click="doplay.roll()" class="button button-dark button-full">Roll!</button>
+          <button ng-click="doplay.minus()" class="button button-dark"><i class="ion-minus-round"></i></button>
+          <button ng-click="doplay.plus()" class="button button-dark"><i class="ion-plus-round"></i></button>
+          <button ng-click="doplay.goNext()" class="button button-dark">Next Player</button>
+          <button ng-click="doplay.endGame()" class="button button-dark">End Game</button>
+        </center>
+        <div class="item item-divider"></div>
+      </div>
+    </ion-content>
+  </ion-view hide-back-button="true">
+</ion-nav-view>

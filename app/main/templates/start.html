@@ -1,0 +1,94 @@
+<ion-nav-bar class="bar-dark"></ion-nav-bar>
+<ion-nav-view>
+<ion-view hide-back-button="true" style="background-color: #669999;">
+  <ion-content>
+    <div style="height:220px;">
+      <center><img src="http://i.imgur.com/xVPulK4.png" height="300" width="300" /></center>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Welcome to Dice!
+      </div>
+      <div class="item item-text-wrap">
+        Here's how it works: Enter in the information below and submit the form. <span ng-show="read.visibility">It will then take you over to another page in which each player will have an opportunity to get their picture taken! From there, you can select who goes first and what order. Once you start your game, it will cycle through each player or team allowing players to add/subtract points, skip, or end the game. What you can do is assign someone to look over the dice rolling or send the device around for the players to roll their own dice. </span>
+      </div>
+      <button class="button button-full button-dark button-small" ng-click="read.toggle()">{{ read.toggleText }}</button>
+      <div class="item item-divider"><font size="0.9">Currently only the DEFAULT type of game is available.</font></div>
+<!--       <div class="item item-text-wrap">
+        Your current options:
+        {{ gameType }},
+        {{ playerNum }} Player(s),
+        {{ dieNum }} Di(c)e, and
+        {{ sideNum }} Side(s).
+      </div> -->
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Type of Game
+        </div>
+        <select ng-model="option.gameType">
+          <option ng-selected="true">All vs All</option>
+          <option>Team vs Team</option>
+          <option>Competing Bracket</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Number of Players
+        </div>
+        <select ng-model="option.playerNum">
+          <option ng-selected="true">2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Number of Dice
+        </div>
+        <select ng-model="option.dieNum">
+          <option>1</option>
+          <option ng-selected="true">2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Number of Sides
+        </div>
+        <select ng-model="option.sideNum">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option ng-selected="true">6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+      </label>
+      <button class="button button-full button-balanced" ng-click="submit(option.gameType, option.playerNum, option.dieNum, option.sideNum)">
+        Proceed <span class="ion-chevron-right"></span>
+      </button>
+    </div>
+  </ion-content>
+</ion-view hide-back-button="true">
+</ion-nav-view>
